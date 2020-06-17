@@ -11,6 +11,10 @@ namespace AngularAPI.Controllers
     public class UserAPIController : ApiController
     {
         DemoEntities objEntity = new DemoEntities();
+        /// <summary>
+        /// GetUserDetails
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [ActionName("GetUserDetails")]
         public IQueryable<userdetail> GetUser()
@@ -25,6 +29,11 @@ namespace AngularAPI.Controllers
             }
 
         }
+        /// <summary>
+        /// GetUserDetailsById
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         [HttpGet]
         [ActionName("GetUserDetailsById/{userId}")]
         public IHttpActionResult GetUserById(string userId)
@@ -45,7 +54,11 @@ namespace AngularAPI.Controllers
             }
             return Ok(objUser);
         }
-
+        /// <summary>
+        /// InsertUserDetails
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         [HttpPost]
         [ActionName("InsertUserDetails")]
         public IHttpActionResult PostUser(userdetail data)
@@ -73,7 +86,11 @@ namespace AngularAPI.Controllers
             }
             return Ok(message);
         }
-
+        /// <summary>
+        /// UpdateEmployeeDetails
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPut]
         [ActionName("UpdateEmployeeDetails")]
        public IHttpActionResult PutUserMaster(userdetail user)
@@ -112,7 +129,11 @@ namespace AngularAPI.Controllers
             }
             return Ok(message);
         }
-
+        /// <summary>
+        /// DeleteUserDetails
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         [ActionName("DeleteUserDetails")]
         public IHttpActionResult DeleteEmaployeeDelete(int id)
