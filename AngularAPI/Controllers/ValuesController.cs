@@ -10,6 +10,10 @@ namespace AngularAPI.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
+        /// <summary>
+        /// Get
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };

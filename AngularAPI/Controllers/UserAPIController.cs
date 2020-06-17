@@ -138,19 +138,27 @@ namespace AngularAPI.Controllers
         [ActionName("DeleteUserDetails")]
         public IHttpActionResult DeleteEmaployeeDelete(int id)
         {
-            string message = "";
-            userdetail user = objEntity.userdetails.Find(id);
-            objEntity.userdetails.Remove(user);
-            int result = objEntity.SaveChanges();
-            if (result > 0)
+            try
             {
-                message = "User has been sussfully deleted";
+                string message = "";
+                userdetail user = objEntity.userdetails.Find(id);
+                objEntity.userdetails.Remove(user);
+                int result = objEntity.SaveChanges();
+                if (result > 0)
+                {
+                    message = "User has been sussfully deleted";
+                }
+                else
+                {
+                    message = "faild";
+                }
+                return Ok(message);
             }
-            else
+            catch (Exception ex)
             {
-                message = "faild";
+
+                throw;
             }
-            return Ok(message);
         }
     }
     }
