@@ -29,6 +29,25 @@ namespace AngularAPI.Controllers
             }
 
         }
+
+        /// <summary>
+        /// GetUsers
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [ActionName("GetUsers")]
+        public IQueryable<userdetail> GetUserData()
+        {
+            try
+            {
+                return objEntity.userdetails;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
         /// <summary>
         /// GetUserDetailsById
         /// </summary>
